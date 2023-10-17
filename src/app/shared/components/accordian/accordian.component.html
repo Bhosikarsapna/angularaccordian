@@ -1,0 +1,21 @@
+
+<div class="card">
+    <div class="card-header  orange d-flex justify-content-between"
+    (click) = "this.isCollapsed = !this.isCollapsed"
+    >
+     <ng-content select="h6">
+      
+     </ng-content>
+     <i class="fa-solid align-self-center"
+     [ngClass]="{
+        'fa-sort-down' : !isCollapsed,
+        'fa-sort-up' : isCollapsed
+     }"
+     ></i>
+    </div>
+    <div class="card-body" *ngIf="isCollapsed">
+      <ng-content select="p">
+
+      </ng-content>
+    </div>
+</div>
